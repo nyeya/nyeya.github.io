@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Zakaria Muhammad Kamaldeen - Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+  <!-- Vendor CSS Files (CDN Versions) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+
+</head>
+<body class="index-page">
+    <!-- Preloader -->
+    <div id="preloader" class="simple-preloader" aria-label="Loading...">
+      <div class="simple-spinner"></div>
+      <div class="simple-loader-text">Zakaria Muhammad Kamaldeen</div>
+      <div class="simple-loader-tagline">Portfolio loading...</div>
+    </div>
+<script>
+  (function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      const removePreloader = () => {
+        preloader.classList.add('hidden');
+        preloader.remove()
+      };
+      window.addEventListener('load', removePreloader);
+      setTimeout(removePreloader, 3000); // fallback in case load event is slow
+    }
+  })();
+
+  </script>
+  
+  <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+    <i class="bi bi-moon"></i>
+  </button>
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Mobile Navbar -->
+  <nav class="mobile-navbar">
+    <a href="#hero" class="navbar-brand">Nyeya</a>
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+  </nav>
+
+  <!-- Sidebar -->
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+      <div class="hero-overlay"></div>
+      <div class="container not-part" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <h2 class="fw-bold display-4" style="color: var(--heading-color)">Zakaria Muhammad Kamaldeen</h2>
+            <p>I'm <span class="typed" data-typed-items="Aspiring Data Scientist, Web Developer, Automation Enthusiast"></span></p>
+            <p class="mt-3 mb-4">A motivated and purpose-driven final-year Computer Science student passionate about data science, web development, and automation. Committed to developing impactful software solutions and predictive models, with a values-driven mindset and a desire to contribute meaningfully to society.</p>
+            <div class="social-links d-flex justify-content-center gap-3 mb-2">
+              <a href="https://www.linkedin.com/in/muhammadkamaldeen79" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/nyeya" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="mailto:muhammadkamaldeen92@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+            <a href="#contact" class="btn btn-primary bg-accent border-0 px-4 py-2 mt-2">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Driven by curiosity, discipline, and a deep sense of purpose, I strive to leverage technology to solve real-world problems and inspire positive change.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-3">
+            <img src="assets/img/profile-img.jpg" class="img-fluid rounded shadow card-modern" alt="Zakaria Muhammad Kamaldeen">
+          </div>
+          <div class="col-lg-9 content">
+            <h2 class="fw-bold" style="color: var(--heading-color)">Personal Information</h2>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Full Name:</strong> <span>Zakaria Muhammad Kamaldeen</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Nationality:</strong> <span>Ghanaian</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Residence:</strong> <span>Tamale, Northern Region, Ghana</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+233 553 994 848</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>muhammadkamaldeen92@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Marital Status:</strong> <span>Single</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Driver's License:</strong> <span>Not yet acquired</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Criminal Record:</strong> <span>None</span></li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="mt-4" style="color: var(--heading-color)">Career Objective</h3>
+            <p class="py-2">A motivated and purpose-driven final-year Computer Science student at C.K Tedam University of Technology and Applied Sciences with a growing passion for data science, web development, and automation. I am committed to applying my technical skills, analytical thinking, and values-driven mindset to develop impactful software solutions and predictive models. I aspire to become a highly skilled and respected data scientist and web developer. Guided by deep personal values and life experiences, I am determined to succeed and contribute meaningfully to society.</p>
+            <h3 class="mt-4" style="color: var(--heading-color)">Personal Attributes</h3>
+            <ul class="mb-2">
+              <li>Highly disciplined and self-motivated</li>
+              <li>Values-driven with strong family orientation</li>
+              <li>Quiet, focused, and emotionally resilient</li>
+              <li>Deeply spiritual with a central belief in God</li>
+              <li>Inspired by the memory of my late grandmother (passed in 2018), who greatly influenced my early life</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Happy Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-journal-richtext"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-headset"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-people"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hard Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+        </div>
+      </div>
+    </section><!-- /Stats Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Technical skills and tools I use to build, analyze, and deliver impactful solutions.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <h5 class="fw-bold mb-2" style="color: var(--heading-color)">Programming Languages</h5>
+            <div class="progress">
+              <span class="skill"><span>Python</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>VB.Net</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Java</span> <i class="val">65%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <h5 class="fw-bold mt-4 mb-2" style="color: var(--heading-color)">Frameworks & Libraries</h5>
+            <ul class="gradient-bullets mb-3">
+              <li>React, Next.js, Express.js, Node.js</li>
+              <li>Pandas, Scikit-learn</li>
+              <li>OpenCV, TensorFlow, PyTorch</li>
+            </ul>
+            <h5 class="fw-bold mt-4 mb-2" style="color: var(--heading-color)">Database Systems</h5>
+            <ul class="gradient-bullets mb-3">
+              <li>MySQL, MongoDB, PostgreSQL</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h5 class="fw-bold mb-2" style="color: var(--heading-color)">Tools & Technologies</h5>
+            <ul class="gradient-bullets mb-3">
+              <li>Git & GitHub</li>
+              <li>Docker (basic understanding)</li>
+              <li>Apache Airflow (learning phase)</li>
+              <li>DevOps concepts (beginner level)</li>
+              <li>Postman</li>
+              <li>Jupyter Notebook</li>
+            </ul>
+            <h5 class="fw-bold mt-4 mb-2" style="color: var(--heading-color)">Web Design & UI Libraries</h5>
+            <ul class="gradient-bullets mb-3">
+              <li>HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, PHP</li>
+            </ul>
+            <h5 class="fw-bold mt-4 mb-2" style="color: var(--heading-color)">Others</h5>
+            <ul class="gradient-bullets mb-3">
+              <li>Microsoft Office</li>
+              <li>Video Editing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Skills Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Education and professional experience that shaped my journey in technology and data science.</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0 card-modern">
+              <h4>Zakaria Muhammad Kamaldeen</h4>
+              <p><em>Motivated Computer Science student with a passion for data science, web development, and automation. Committed to building impactful solutions and contributing meaningfully to society.</em></p>
+              <ul>
+                <li>Tamale, Northern Region, Ghana</li>
+                <li>+233 553 994 848</li>
+                <li>muhammadkamaldeen92@gmail.com</li>
+              </ul>
+            </div>
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item card-modern">
+              <h4>Bachelor of Science in Computer Science</h4>
+              <h5>Jan 2022 – Nov 2025</h5>
+              <p><em>C.K. Tedam University of Technology and Applied Sciences</em></p>
+            </div>
+            <div class="resume-item card-modern">
+              <h4>West African Senior School Certificate (WASSCE)</h4>
+              <h5>Sep 2018 – Oct 2021</h5>
+              <p><em>Tamale Secondary School</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item card-modern">
+              <h4>IT Personnel</h4>
+              <h5>Apr 2024 – Nov 2024</h5>
+              <p><em>SpringFields Academy, Tamale (TVET Training Center)</em></p>
+              <ul>
+                <li>Oversaw registration and database management of learners in the CTVET program.</li>
+                <li>Maintained records, managed learner data, and resolved technical issues.</li>
+                <li>Collaborated with staff to support computer-based data entry processing.</li>
+              </ul>
+            </div>
+            <div class="resume-item card-modern">
+              <h4>ICT Intern</h4>
+              <h5>Nov 2024 – Dec 2024</h5>
+              <p><em>Tamale West Hospital</em></p>
+              <ul>
+                <li>Assisted with hardware maintenance and software troubleshooting.</li>
+                <li>Provided technical support for hospital administrative systems.</li>
+                <li>Participated in network maintenance and systems backup procedures.</li>
+              </ul>
+            </div>
+            <div class="resume-item card-modern">
+              <h4>ICT Intern</h4>
+              <h5>Nov 2023 – Dec 2023</h5>
+              <p><em>Tamale College of Education</em></p>
+              <ul>
+                <li>Supported the ICT unit in maintaining computers and managing internet connectivity.</li>
+                <li>Handled troubleshooting and basic programming tasks to aid staff operations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Resume Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>Highlighted projects demonstrating my skills in software development, data science, and computer vision.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 col-md-12 portfolio-item card-modern">
+            <img src="assets/img/portfolio/app-1.jpg" class="img-fluid rounded shadow d-block" alt="Enhanced HRMS">
+            <div class="portfolio-info">
+              <h4>Enhanced Human Resource Management System</h4>
+              <ul>
+                <li>User authentication and role-based access</li>
+                <li>Department and leave management</li>
+                <li>Employee transfer tracking</li>
+                <li>MySQL database integration</li>
+                <li>Admin dashboard with dynamic headings and breadcrumb navigation</li>
+              </ul>
+              <span class="badge bg-accent">Tech: React,Node-Express, MySQL</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 portfolio-item card-modern">
+            <img src="assets/img/portfolio/app-2.jpg" class="img-fluid rounded shadow" alt="Face and Gesture Recognition System">
+            <div class="portfolio-info">
+              <h4>Face and Gesture Recognition System</h4>
+              <ul>
+                <li>Deep learning-based face detection and recognition</li>
+                <li>Emotion detection (e.g., happy/sad)</li>
+                <li>Hand and gesture recognition for interaction (e.g., wave = "Hello")</li>
+                <li>Mouse control and scrolling via gestures using Python and TensorFlow</li>
+              </ul>
+              <span class="badge bg-accent">Tech: Python, OpenCV, TensorFlow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Interests & Knowledge Areas Section -->
+    <section id="interests" class="section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Interests & Knowledge Areas</h2>
+        <p>What drives me and areas where I focus my learning and growth.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5 class="fw-bold" style="color: var(--heading-color)">Relevant Knowledge Areas</h5>
+            <ul class="gradient-bullets">
+              <li>Full-stack web development</li>
+              <li>Data preprocessing, model training, and evaluation</li>
+              <li>RESTful API development</li>
+              <li>UI/UX principles for responsive applications</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h5 class="fw-bold" style="color: var(--heading-color)">Interests</h5>
+            <ul class="gradient-bullets">
+              <li><i class="bi bi-trophy"></i> Football</li>
+              <li><i class="bi bi-lightbulb"></i> Research and Innovation</li>
+              <li><i class="bi bi-book"></i> Reading financial books</li>
+              <li><i class="bi bi-puzzle"></i> Solving Logic Puzzles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Interests & Knowledge Areas Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>How I can help you or your organization leverage technology for growth and efficiency.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative card-modern">
+              <div class="icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h3>Web Development</h3>
+              <p>Building responsive, user-friendly websites and web applications using modern technologies and best practices.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative card-modern">
+              <div class="icon">
+                <i class="bi bi-bar-chart-line"></i>
+              </div>
+              <h3>Data Analysis & Visualization</h3>
+              <p>Transforming raw data into actionable insights with clear, compelling visualizations and reports.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative card-modern">
+              <div class="icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h3>Automation & Scripting</h3>
+              <p>Automating repetitive tasks and workflows to boost productivity and reduce errors using Python and other tools.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-indigo position-relative card-modern">
+              <div class="icon">
+                <i class="bi bi-person-lines-fill"></i>
+              </div>
+              <h3>Technical Support & Training</h3>
+              <p>Providing technical support, troubleshooting, and training for individuals and teams to maximize technology adoption.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+    <div class="section-divider">
+      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V48C960 16 480 16 0 48V0Z" fill="#2563eb"/></svg>
+    </div>
+
+    <!-- Testimonials Section -->
+
+    <!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in touch for collaborations, opportunities, or just to say hello!</p>
+      </div>
+      <div class="container" data-aos="fade" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Tamale, Northern Region, Ghana</p>
+              </div>
+            </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Me</h3>
+                <p>+233 553 994 848</p>
+              </div>
+            </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email</h3>
+                <p>muhammadkamaldeen92@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container not-part">
+      <h3 class="sitename">Zakaria Muhammad Kamaldeen</h3>
+      <p>Purpose-driven technologist passionate about data, web, and automation. Inspired to build, learn, and help others grow.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-github"></i></a>
+        <a href="mailto:muhammadkamaldeen92@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="container not-part">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Zakaria Muhammad Kamaldeen</strong> <span>All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/js/glightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+</body>
+</html>
