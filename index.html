@@ -37,16 +37,14 @@
     </div>
 <script>
   (function() {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-      const removePreloader = () => {
-        preloader.classList.add('hidden');
-        preloader.remove()
-      };
-      window.addEventListener('load', removePreloader);
-      setTimeout(removePreloader, 3000); // fallback in case load event is slow
-    }
-  })();
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.classList.add('hidden');
+      preloader.remove();
+    });
+  }
+})();
 
   </script>
   
