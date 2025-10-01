@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/logo.svg" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -65,14 +65,18 @@
   <header id="header" class="header d-flex flex-column justify-content-center">
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+  <li><a href="#hero" class="active" data-tooltip="Home" aria-label="Home"><i class="bi bi-house-fill navicon"></i><span>Home</span></a></li>
+  <li><a href="#about" data-tooltip="About" aria-label="About"><i class="bi bi-person-circle navicon"></i><span>About</span></a></li>
+  <li><a href="#resume" data-tooltip="Resume" aria-label="Resume"><i class="bi bi-file-earmark-text-fill navicon"></i><span>Resume</span></a></li>
+  <li><a href="#portfolio" data-tooltip="Portfolio" aria-label="Portfolio"><i class="bi bi-grid-3x3-gap-fill navicon"></i><span>Portfolio</span></a></li>
+  <li><a href="#services" data-tooltip="Services" aria-label="Services"><i class="bi bi-tools navicon"></i><span>Services</span></a></li>
+  <li><a href="#contact" data-tooltip="Contact" aria-label="Contact"><i class="bi bi-envelope-fill navicon"></i><span>Contact</span></a></li>
       </ul>
     </nav>
+    <!-- Mobile: close button for sidebar -->
+    <button id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close navigation" title="Close">
+      <i class="bi bi-x-lg"></i>
+    </button>
   </header>
   
   <!-- Sidebar Overlay -->
@@ -159,7 +163,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-emoji-smile"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
@@ -167,7 +171,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-journal-richtext"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="97" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects</p>
             </div>
           </div><!-- End Stats Item -->
@@ -175,16 +179,16 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-headset"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hour Working</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-people"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Months of working</p>
             </div>
           </div><!-- End Stats Item -->
         </div>
@@ -363,6 +367,30 @@
                 <li>Mouse control and scrolling via gestures using Python and TensorFlow</li>
               </ul>
               <span class="badge bg-accent">Tech: Python, OpenCV, TensorFlow</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 portfolio-item card-modern">
+            <img src="assets/img/portfolio/app-3.png" class="img-fluid rounded shadow" alt="Product Alert Expiry App">
+            <div class="portfolio-info">
+              <h4>Product Alert Expiry App</h4>
+              <ul>
+                <li>Expiry tracking & alerts with timely notifications for expiring/expired products</li>
+                <li>Inventory & category management with user-specific access and role-based controls</li>
+                <li>Reporting dashboard plus data backup & restore for recovery</li>
+              </ul>
+              <span class="badge bg-accent">Tech: React 19, Vite, Node-Express, MySQL</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 portfolio-item card-modern">
+            <img src="assets/img/portfolio/app-4.png" class="img-fluid rounded shadow" alt="NyexaGram - Core Functionality">
+            <div class="portfolio-info">
+              <h4>NyexaGram — Core Functionality</h4>
+              <ul>
+                <li>User accounts & authentication (sign in/out, profiles, server-managed sessions)</li>
+                <li>Posts & discovery: upload/manage images, drafts, collections, personalized feed and search</li>
+                <li>Social interactions & PWA: follow/like/comment, notifications, plus offline/PWA and performance optimizations</li>
+              </ul>
+              <span class="badge bg-accent">Tech: TypeScript, React, Vite, Convex (backend)</span>
             </div>
           </div>
         </div>

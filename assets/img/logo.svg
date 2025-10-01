@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Nyeya MK logo">
+  <title>Nyeya MK logo</title>
+  <rect x="0" y="0" width="512" height="512" rx="64" fill="#2563eb"/>
+  <!-- Bold, filled name for legibility at favicon sizes -->
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
+    font-family="Poppins, Arial, Helvetica, sans-serif" font-weight="800"
+    font-size="140" fill="#ffffff">Nyeya</text>
+</svg>

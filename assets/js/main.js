@@ -260,6 +260,15 @@
         body.classList.remove('sidebar-open');
       }
     });
+    // Close sidebar when clicking the close button
+    const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        header.classList.remove('header-show');
+        sidebarOverlay.classList.remove('show');
+        body.classList.remove('sidebar-open');
+      });
+    }
   }
 })();
 

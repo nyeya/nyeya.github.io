@@ -155,23 +155,104 @@
     --------------------------------------------------------------*/
     .header {
       color: var(--default-color);
-      background-color: transparent;
+      /* Floating dock centered vertically on desktop */
       position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 160px;
-      padding: 0 15px;
-      transition: all 0.3s ease-in-out;
-      overflow-y: auto;
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 8px;
+      transition: all 0.25s ease-in-out;
       z-index: 997;
-      /* border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); */
-      transform: translateX(-100%);
+      border-radius: 14px;
+      backdrop-filter: blur(8px) saturate(120%);
+      -webkit-backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+      box-shadow: 0 8px 30px rgba(8,15,30,0.12);
+      max-height: 80vh;
+      overflow: hidden; /* we'll let the inner nav scroll when needed */
     }
-    
+
+  /* Mobile override: ensure header is NOT a floating dock on small screens */
+  @media (max-width: 1199px) {
+    /* Make header full-screen sidebar on mobile and tablet */
+    .header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: translateX(-100%) !important; /* hidden by default; toggled via .header-show by JS */
+      width: 100% !important;
+      height: 100% !important;
+      padding: 1rem 1.25rem !important;
+      border-radius: 0 !important;
+      background: var(--nav-mobile-background-color) !important;
+      box-shadow: 2px 0 16px rgba(0,0,0,0.08) !important;
+      overflow-y: auto !important;
+      max-height: none !important;
+    }
+
+    /* When sidebar is shown (JS toggles .header-show), slide it in */
     .header.header-show {
-      transform: translateX(0);
+      transform: translateX(0) !important;
+      z-index: 9999 !important;
     }
+
+    /* Ensure nav items show full labels and become touch-friendly */
+    .navmenu a,
+    .navmenu a:focus {
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 12px 14px !important;
+      height: auto !important;
+      border-radius: 8px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .navmenu a span,
+    .navmenu a:focus span {
+      display: block !important;
+    }
+
+    /* Disable any compact circular icon-only styling on mobile */
+    .navmenu a i {
+      margin-right: 12px !important;
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+    }
+
+    /* Hide CSS tooltips and desktop-only hover niceties on touch devices */
+    .navmenu a[data-tooltip]::after { display: none !important; }
+  }
+
+  /* Sidebar close button (mobile) */
+  .sidebar-close-btn {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: color-mix(in srgb, var(--default-color), transparent 10%);
+    font-size: 1.25rem;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .sidebar-close-btn:hover {
+    background: color-mix(in srgb, var(--default-color), transparent 92%);
+  }
+
+  @media (max-width: 1199px) {
+    .sidebar-close-btn { display: inline-flex; align-items: center; justify-content: center; z-index: 10001; }
+  }
+    /* .header.header-show {
+      transform: translateX(0);
+    } */
 
     /* Mobile Navbar */
     .mobile-navbar {
@@ -229,9 +310,9 @@
     }
 
     @media (min-width: 1200px) {
-      .header {
+      /* .header {
         transform: translateX(0);
-      }
+      } */
       .mobile-navbar {
         display: none;
       }
@@ -311,26 +392,24 @@
     }
 
     @media (min-width: 1200px) {
-      .navmenu a,
-      .navmenu a:focus {
-        width: 56px;
-        overflow: hidden;
-      }
-      .navmenu a span,
-      .navmenu a:focus span {
-        display: none;
-      }
-      
-      .navmenu a:hover,
-      .navmenu li:hover>a {
-        width: 100%;
-        color: var(--contrast-color);
-      }
-
-      .navmenu a:hover span,
-      .navmenu li:hover>a span {
-        display: block;
-      }
+          .navmenu a,
+          .navmenu a:focus {
+            width: 56px;
+            overflow: hidden;
+          }
+          /* Always hide nav label on desktop, even on hover/focus */
+          .navmenu a span,
+          .navmenu a:focus span,
+          .navmenu a:hover span,
+          .navmenu li:hover>a span {
+            display: none !important;
+          }
+          .navmenu a:hover,
+          .navmenu li:hover>a {
+            width: 100%;
+            color: var(--contrast-color);
+          }
+          /* Tooltip is handled by ::after, not by showing span */
     }
 
     @media (max-width: 1199px) {
