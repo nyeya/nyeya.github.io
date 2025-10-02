@@ -1,26 +1,20 @@
-   /*--------------------------------------------------------------
-    # Font & Color Variables
-    # Help: https://bootstrapmade.com/color-system/
-    --------------------------------------------------------------*/
-    /* Fonts */
+
     :root {
       --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       --heading-font: "Raleway",  sans-serif;
       --nav-font: "Poppins",  sans-serif;
     }
 
-    /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
     :root { 
-      --background-color: #f8fafc; /* Light blue background */
-      --default-color: #1e293b; /* Deep slate for text */
-      --heading-color: #1e40af; /* Dark blue for headings */
-      --accent-color: #2563eb; /* Primary blue accent */
-      --surface-color: #ffffff; /* Card/section backgrounds */
-      --contrast-color: #ffffff; /* For text on blue backgrounds */
-      --highlight-color: #f59e42; /* Gold/orange for highlights */
+      --background-color: #f8fafc;
+      --default-color: #1e293b;
+      --heading-color: #1e40af;
+      --accent-color: #2563eb;
+      --surface-color: #ffffff;
+      --contrast-color: #ffffff;
+      --highlight-color: #f59e42;
     }
 
-    /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
     :root {
       --nav-color: #1e293b;
       --nav-hover-color: #2563eb;
@@ -30,24 +24,20 @@
       --nav-dropdown-hover-color: #2563eb;
     }
 
-    /* Add a utility class for gold/orange highlights */
     .text-highlight {
       color: var(--highlight-color) !important;
     }
 
-    /* Add a utility class for blue backgrounds */
     .bg-accent {
       background-color: var(--accent-color) !important;
       color: var(--contrast-color) !important;
     }
 
-    /* Add a utility class for dark blue backgrounds */
     .bg-heading {
       background-color: var(--heading-color) !important;
       color: var(--contrast-color) !important;
     }
 
-    /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
     .light-background {
       --background-color: #f9f9f9;
       --surface-color: #ffffff;
@@ -61,14 +51,7 @@
       --contrast-color: #ffffff;
     }
 
-    /* Smooth scroll */
-    :root {
-      scroll-behavior: smooth;
-    }
 
-    /*--------------------------------------------------------------
-    # General Styling & Shared Classes
-    --------------------------------------------------------------*/
     html {
       scroll-behavior: smooth;
     }
@@ -100,8 +83,7 @@
       font-family: var(--heading-font);
     }
 
-    /* PHP Email Form Messages */
-    .php-email-form .error-message {
+    .formspree-form .error-message {
       display: none;
       background: #df1529;
       color: #ffffff;
@@ -111,7 +93,7 @@
       font-weight: 600;
     }
 
-    .php-email-form .sent-message {
+    .formspree-form .sent-message {
       display: none;
       color: #ffffff;
       background: #059652;
@@ -121,7 +103,7 @@
       font-weight: 600;
     }
 
-    .php-email-form .loading {
+    .formspree-form .loading {
       display: none;
       background: var(--surface-color);
       text-align: center;
@@ -129,7 +111,7 @@
       margin-bottom: 24px;
     }
 
-    .php-email-form .loading:before {
+    .formspree-form .loading:before {
       content: "";
       display: inline-block;
       border-radius: 50%;
@@ -138,10 +120,10 @@
       margin: 0 10px -6px 0;
       border: 3px solid var(--accent-color);
       border-top-color: var(--surface-color);
-      animation: php-email-form-loading 1s linear infinite;
+      animation: formspree-form-loading 1s linear infinite;
     }
 
-    @keyframes php-email-form-loading {
+    @keyframes formspree-form-loading {
       0% {
         transform: rotate(0deg);
       }
@@ -150,12 +132,8 @@
       }
     }
 
-    /*--------------------------------------------------------------
-    # Global Header
-    --------------------------------------------------------------*/
     .header {
       color: var(--default-color);
-      /* Floating dock centered vertically on desktop */
       position: fixed;
       top: 50%;
       left: 18px;
@@ -170,17 +148,15 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
       box-shadow: 0 8px 30px rgba(8,15,30,0.12);
       max-height: 80vh;
-      overflow: hidden; /* we'll let the inner nav scroll when needed */
+      overflow: hidden;
     }
 
-  /* Mobile override: ensure header is NOT a floating dock on small screens */
   @media (max-width: 1199px) {
-    /* Make header full-screen sidebar on mobile and tablet */
     .header {
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
-      transform: translateX(-100%) !important; /* hidden by default; toggled via .header-show by JS */
+      transform: translateX(-100%) !important;
       width: 100% !important;
       height: 100% !important;
       padding: 1rem 1.25rem !important;
@@ -191,13 +167,11 @@
       max-height: none !important;
     }
 
-    /* When sidebar is shown (JS toggles .header-show), slide it in */
     .header.header-show {
       transform: translateX(0) !important;
       z-index: 9999 !important;
     }
 
-    /* Ensure nav items show full labels and become touch-friendly */
     .navmenu a,
     .navmenu a:focus {
       width: 100% !important;
@@ -215,7 +189,6 @@
       display: block !important;
     }
 
-    /* Disable any compact circular icon-only styling on mobile */
     .navmenu a i {
       margin-right: 12px !important;
       width: auto !important;
@@ -224,11 +197,9 @@
       border-radius: 0 !important;
     }
 
-    /* Hide CSS tooltips and desktop-only hover niceties on touch devices */
     .navmenu a[data-tooltip]::after { display: none !important; }
   }
 
-  /* Sidebar close button (mobile) */
   .sidebar-close-btn {
     display: none;
     position: absolute;
@@ -250,11 +221,7 @@
   @media (max-width: 1199px) {
     .sidebar-close-btn { display: inline-flex; align-items: center; justify-content: center; z-index: 10001; }
   }
-    /* .header.header-show {
-      transform: translateX(0);
-    } */
 
-    /* Mobile Navbar */
     .mobile-navbar {
       display: none;
       position: fixed;
@@ -291,7 +258,6 @@
       color: var(--accent-color);
     }
 
-    /* Sidebar Overlay */
     .sidebar-overlay {
       position: fixed;
       top: 0;
@@ -310,9 +276,6 @@
     }
 
     @media (min-width: 1200px) {
-      /* .header {
-        transform: translateX(0);
-      } */
       .mobile-navbar {
         display: none;
       }
@@ -332,26 +295,20 @@
         margin-top: 80px;
       }
       
-      /* Add background for mobile sidebar */
       .header {
         background-color: var(--surface-color);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
       }
       
-      /* Prevent body scroll when sidebar is open */
       body.sidebar-open {
         overflow: hidden;
       }
       
-      /* Ensure sidebar is above overlay */
       .header.header-show {
         z-index: 9999;
       }
     }
 
-    /*--------------------------------------------------------------
-    # Navigation Menu
-    --------------------------------------------------------------*/
     .navmenu {
       padding: 0;
       z-index: 9997;
@@ -397,7 +354,6 @@
             width: 56px;
             overflow: hidden;
           }
-          /* Always hide nav label on desktop, even on hover/focus */
           .navmenu a span,
           .navmenu a:focus span,
           .navmenu a:hover span,
@@ -409,7 +365,6 @@
             width: 100%;
             color: var(--contrast-color);
           }
-          /* Tooltip is handled by ::after, not by showing span */
     }
 
     @media (max-width: 1199px) {
@@ -434,9 +389,6 @@
       background: var(--nav-hover-color);
     }
 
-    /*--------------------------------------------------------------
-    # Global Footer
-    --------------------------------------------------------------*/
     .footer {
       color: var(--default-color);
       background-color: var(--background-color);
@@ -455,7 +407,7 @@
     }
 
     .footer p {
-      font-size: 15;
+      font-size: 15px;
       font-style: italic;
       padding: 0;
       margin: 0 0 30px 0;
@@ -496,9 +448,6 @@
       padding-top: 5px;
     }
 
-    /*--------------------------------------------------------------
-    # Preloader
-    --------------------------------------------------------------*/
     #preloader {
       position: fixed;
       inset: 0;
@@ -524,9 +473,6 @@
       }
     }
 
-    /*--------------------------------------------------------------
-    # Scroll Top Button
-    --------------------------------------------------------------*/
     .scroll-top {
       position: fixed;
       visibility: hidden;
@@ -558,18 +504,12 @@
       bottom: 15px;
     }
 
-    /*--------------------------------------------------------------
-    # Disable aos animation delay on mobile devices
-    --------------------------------------------------------------*/
     @media screen and (max-width: 768px) {
       [data-aos-delay] {
         transition-delay: 0 !important;
       }
     }
 
-    /*--------------------------------------------------------------
-    # Global Page Titles & Breadcrumbs
-    --------------------------------------------------------------*/
     .page-title {
       --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
       color: var(--default-color);
@@ -605,9 +545,6 @@
       color: color-mix(in srgb, var(--default-color), transparent 70%);
     }
 
-    /*--------------------------------------------------------------
-    # Global Sections
-    --------------------------------------------------------------*/
     section,
     .section {
       color: var(--default-color);
@@ -616,9 +553,6 @@
       overflow: clip;
     }
 
-    /*--------------------------------------------------------------
-    # Global Section Titles
-    --------------------------------------------------------------*/
     .section-title {
       text-align: center;
       padding-bottom: 60px;
@@ -663,9 +597,6 @@
       margin-bottom: 0;
     }
 
-    /*--------------------------------------------------------------
-    # Hero Section
-    --------------------------------------------------------------*/
     .hero {
       width: calc(100% + 160px);
       margin-left: -160px;
@@ -743,9 +674,6 @@
       }
     }
 
-    /*--------------------------------------------------------------
-    # About Section
-    --------------------------------------------------------------*/
     .about .content h2 {
       font-weight: 700;
       font-size: 24px;
@@ -774,9 +702,6 @@
       line-height: 0;
     }
 
-    /*--------------------------------------------------------------
-    # Stats Section
-    --------------------------------------------------------------*/
     .stats i {
       background-color: var(--accent-color);
       color: var(--contrast-color);
@@ -813,9 +738,6 @@
       font-size: 16px;
     }
 
-    /*--------------------------------------------------------------
-    # Skills Section
-    --------------------------------------------------------------*/
     .skills .progress {
       height: 60px;
       display: block;
@@ -879,9 +801,6 @@
       100% { transform: translateX(100%); }
     }
 
-    /*--------------------------------------------------------------
-    # Resume Section
-    --------------------------------------------------------------*/
     .resume {
       background: var(--surface-color);
       border-radius: 1.5rem;
@@ -956,9 +875,6 @@
       }
     }
 
-    /*--------------------------------------------------------------
-    # Portfolio Section
-    --------------------------------------------------------------*/
     .portfolio .portfolio-filters {
       padding: 0;
       margin: 0 auto 20px auto;
@@ -1057,9 +973,6 @@
       bottom: 0;
     }
 
-    /*--------------------------------------------------------------
-    # Services Section
-    --------------------------------------------------------------*/
     .services .service-item {
       background-color: var(--surface-color);
       box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
@@ -1186,9 +1099,6 @@
       fill: #f3268c;
     }
 
-    /*--------------------------------------------------------------
-    # Testimonials Section
-    --------------------------------------------------------------*/
     .testimonials .testimonials-carousel,
     .testimonials .testimonials-slider {
       overflow: hidden;
@@ -1267,9 +1177,6 @@
       background-color: var(--accent-color);
     }
 
-    /*--------------------------------------------------------------
-    # Contact Section
-    --------------------------------------------------------------*/
     .contact .info-item+.info-item {
       margin-top: 40px;
     }
@@ -1306,13 +1213,13 @@
       color: var(--contrast-color);
     }
 
-    .contact .php-email-form {
+    .contact .formspree-form {
       height: 100%;
     }
 
-    .contact .php-email-form input[type=text],
-    .contact .php-email-form input[type=email],
-    .contact .php-email-form textarea {
+    .contact .formspree-form input[type=text],
+    .contact .formspree-form input[type=email],
+    .contact .formspree-form textarea {
       font-size: 14px;
       padding: 10px 15px;
       box-shadow: none;
@@ -1322,19 +1229,19 @@
       border-color: color-mix(in srgb, var(--default-color), transparent 80%);
     }
 
-    .contact .php-email-form input[type=text]:focus,
-    .contact .php-email-form input[type=email]:focus,
-    .contact .php-email-form textarea:focus {
+    .contact .formspree-form input[type=text]:focus,
+    .contact .formspree-form input[type=email]:focus,
+    .contact .formspree-form textarea:focus {
       border-color: var(--accent-color);
     }
 
-    .contact .php-email-form input[type=text]::placeholder,
-    .contact .php-email-form input[type=email]::placeholder,
-    .contact .php-email-form textarea::placeholder {
+    .contact .formspree-form input[type=text]::placeholder,
+    .contact .formspree-form input[type=email]::placeholder,
+    .contact .formspree-form textarea::placeholder {
       color: color-mix(in srgb, var(--default-color), transparent 70%);
     }
 
-    .contact .php-email-form button[type=submit] {
+    .contact .formspree-form button[type=submit] {
       color: var(--contrast-color);
       background: var(--accent-color);
       border: 0;
@@ -1343,13 +1250,10 @@
       border-radius: 50px;
     }
 
-    .contact .php-email-form button[type=submit]:hover {
+    .contact .formspree-form button[type=submit]:hover {
       background: color-mix(in srgb, var(--accent-color), transparent 25%);
     }
 
-    /*--------------------------------------------------------------
-    # Portfolio Details Section
-    --------------------------------------------------------------*/
     .portfolio-details .portfolio-details-slider img {
       width: 100%;
     }
@@ -1521,9 +1425,6 @@
       padding: 0;
     }
 
-    /*--------------------------------------------------------------
-    # Service Details Section
-    --------------------------------------------------------------*/
     .service-details .service-box {
       padding: 20px;
       box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
@@ -1650,16 +1551,8 @@
       color: var(--accent-color);
     }
 
-    /*--------------------------------------------------------------
-    # Starter Section Section
-    --------------------------------------------------------------*/
-    .starter-section {
-      /* Add your styles here */
-    }
 
-    /* --- Modern Design Enhancements --- */
 
-    /* Section Titles */
     .section-title h2 {
       font-size: 2.5rem;
       font-weight: 800;
@@ -1673,13 +1566,11 @@
       margin-bottom: 2.5rem;
     }
 
-    /* Section Spacing */
     .section {
       padding-top: 4.5rem;
       padding-bottom: 4.5rem;
     }
 
-    /* Card Styles */
     .card-modern, .portfolio-item, .service-item, .about .img-fluid {
       border-radius: 1.25rem !important;
       box-shadow: 0 4px 32px 0 rgba(37,99,235,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.03);
@@ -1691,7 +1582,6 @@
       transform: translateY(-4px) scale(1.025);
     }
 
-    /* Hero Gradient Overlay */
     .hero.section {
       position: relative;
       overflow: hidden;
@@ -1756,7 +1646,6 @@
       .hero .container { padding-top: 2.5rem; padding-bottom: 2.5rem; }
     }
 
-    /* Buttons */
     .btn-primary, .bg-accent {
       border-radius: 2rem;
       font-weight: 600;
@@ -1770,7 +1659,6 @@
       transform: translateY(-2px) scale(1.04);
     }
 
-    /* Badges */
     .badge.bg-accent {
       border-radius: 1.5rem;
       padding: 0.5em 1.2em;
@@ -1781,12 +1669,10 @@
       box-shadow: 0 1px 6px 0 rgba(37,99,235,0.10);
     }
 
-    /* Gold/Orange Highlights */
     .text-highlight, .service-item.item-orange .icon, .bi.bi-bar-chart-line {
       color: var(--highlight-color) !important;
     }
 
-    /* Service Icons */
     .service-item .icon {
       width: 64px; height: 64px;
       display: flex; align-items: center; justify-content: center;
@@ -1803,7 +1689,6 @@
       color: #fff;
     }
 
-    /* Interests Icons */
     #interests .bi {
       font-size: 1.4em;
       margin-right: 0.5em;
@@ -1811,7 +1696,6 @@
       color: var(--accent-color);
     }
 
-    /* Social Links */
     .social-links a, .hero .social-links a {
       display: flex;
       align-items: center;
@@ -1845,7 +1729,6 @@
       border: none;
     }
 
-    /* Section Dividers */
     .section-divider {
       display: flex;
       justify-content: center;
@@ -1864,7 +1747,6 @@
       margin: 0 auto;
     }
 
-    /* Responsive Tweaks */
     @media (max-width: 768px) {
       .section-title h2 { font-size: 2rem; }
       .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
@@ -1883,7 +1765,6 @@
       border-radius: 0 2px 2px 0;
     }
 
-    /* About Section Beautification */
     .about .container {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
@@ -2002,9 +1883,6 @@
       }
     }
 
-    /*--------------------------------------------------------------
-    # Cool Gradient Bullets for Lists
-    --------------------------------------------------------------*/
     ul.gradient-bullets {
       list-style: none;
       padding-left: 1.5em;
@@ -2026,10 +1904,6 @@
       box-shadow: 0 1px 4px 0 rgba(37,99,235,0.10);
     }
 
-    /* =====================
-       DARK THEME & THEME TOGGLE
-       (Moved from index.html <style> block)
-       ===================== */
     body.dark-theme {
       background: #181a20 !important;
       color: #e0e6ed !important;
@@ -2080,18 +1954,18 @@
       opacity: 1;
     }
     body.dark-theme .form-control,
-    body.dark-theme .php-email-form {
+    body.dark-theme .formspree-form {
       background: #23272f !important;
       color: #e0e6ed !important;
       border: 1px solid #334155 !important;
       box-shadow: none !important;
     }
     body.dark-theme .form-control:focus,
-    body.dark-theme .php-email-form:focus {
+    body.dark-theme .formspree-form:focus {
       border-color: #2563eb !important;
       box-shadow: 0 0 0 2px #2563eb33 !important;
     }
-    body.dark-theme .php-email-form .form-control {
+    body.dark-theme .formspree-form .form-control {
       border-radius: 0.5rem !important;
       border-width: 1px !important;
     }
@@ -2128,20 +2002,18 @@
       transition: background 0.2s, color 0.2s;
       background: #23272f;
     }
-    body.dark-theme .theme-toggle {
-    }
     .theme-toggle:focus {
       outline: 2px solid #60a5fa;
     }
     .theme-toggle .bi {
       font-size: 1.5rem;
     }
-    .php-email-form {
+    .formspree-form {
       border: none !important;
       box-shadow: none !important;
       background: inherit !important;
     }
-    body.dark-theme .php-email-form {
+    body.dark-theme .formspree-form {
       border: none !important;
       box-shadow: none !important;
       background: #23272f !important;
@@ -2203,8 +2075,7 @@
     body.dark-theme footer {
       background: #181a20 !important;
     }
-    /* 1. Theme toggle at bottom left on mobile */
-    @media (max-width: 991px) {
+    @media (max-width: 1199px) {
       .theme-toggle {
         top: auto !important;
         bottom: 1.5rem !important;
@@ -2213,7 +2084,6 @@
       }
     }
 
-    /* 2. Sidebar Overlay for mobile nav */
     .sidebar-overlay {
       display: none;
       position: fixed;
@@ -2221,7 +2091,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(30, 41, 59, 0.45); /* dark slate, semi-transparent */
+      background: rgba(30, 41, 59, 0.45);
       z-index: 9998;
       transition: opacity 0.3s;
     }
@@ -2234,9 +2104,8 @@
       }
     }
 
-    /* 3. Sidebar/header dark blue in dark mode */
     body.dark-theme .header {
-      background-color: transparent !important; /* transparent in desktop mode */
+      background-color: transparent !important;
       color: #e0e6ed !important;
     }
     
@@ -2252,7 +2121,7 @@
     
     @media (max-width: 1199px) {
       body.dark-theme .header {
-        background-color: #162044 !important; /* dark background for mobile */
+        background-color: #162044 !important;
         border-right: 1px solid #334155 !important;
         color: #e0e6ed !important;
       }
@@ -2262,20 +2131,15 @@
       }
     }
 
-    /* 4. Theme toggle button background for light/dark mode */
     .theme-toggle {
-      background: #f3f6fa; /* light shade for light mode */
+      background: #f3f6fa;
       color: #2563eb;
     }
     body.dark-theme .theme-toggle {
       background: #23272f;
       color: #60a5fa;
     }
-    /* =====================
-       END DARK THEME & THEME TOGGLE
-       ===================== */
 
-    /* === Custom Preloader Styles === */
     .custom-preloader {
       position: fixed;
       inset: 0;
@@ -2342,12 +2206,12 @@
       text-shadow: 0 2px 8px #1e293b44;
       white-space: nowrap;
       pointer-events: none;
-      aria-live: polite;
     }
     .loader-name .shimmer {
       background: linear-gradient(90deg, #f59e42 20%, #fff 50%, #2563eb 80%);
       background-size: 200% 100%;
-      -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shimmer-move 2.5s infinite linear;
       display: inline-block;
@@ -2408,7 +2272,6 @@
       }
     }
 
-    /* === Simple Preloader Styles === */
     .simple-preloader {
       position: fixed;
       inset: 0;

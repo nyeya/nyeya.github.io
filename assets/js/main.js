@@ -1,33 +1,6 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
-
-  /**
-   * Header toggle
-   */
-  // Removed legacy .header-toggle logic. Sidebar toggling is handled by #hamburger-btn below.
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
-        // This logic is no longer needed as .header-toggle is removed.
-        // Keeping it for now in case it's re-introduced or if it's part of a larger refactor.
-        // headerToggle(); 
-      }
-    });
-
-  });
-
   /**
    * Toggle mobile nav dropdowns
    */
@@ -51,13 +24,12 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -66,41 +38,33 @@
    * Animation on scroll function and init
    */
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * Init typed.js
-   */
-  // Removed duplicate Typed.js initialization. Only the DRY version at the bottom remains.
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
+  if (typeof Waypoint !== 'undefined') {
+    let skillsAnimation = document.querySelectorAll('.skills-animation');
+    skillsAnimation.forEach((item) => {
+      new Waypoint({
+        element: item,
+        offset: '80%',
+        handler: function(direction) {
+          let progress = item.querySelectorAll('.progress .progress-bar');
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+        }
+      });
     });
-  });
+  }
 
   /**
    * Initiate glightbox
@@ -131,9 +95,13 @@
       filters.addEventListener('click', function() {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+        if (initIsotope) {
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+        } else {
+          console.warn('Isotope not initialized yet; filter ignored');
+        }
         if (typeof aosInit === 'function') {
           aosInit();
         }
@@ -161,10 +129,6 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  // Removed JS that programmatically scrolls to anchor links. CSS scroll-behavior: smooth will handle anchor navigation.
 
   /**
    * Navmenu Scrollspy
@@ -190,7 +154,6 @@
 
 })();
 
-// === BEGIN: Custom Scripts from index.html (with DRY/WET refactor) ===
 
 // Theme toggler logic
 (function() {
@@ -390,6 +353,54 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+})();
+
+(function(){
+  'use strict';
+
+  function el(sel, ctx){ return (ctx || document).querySelector(sel); }
+  function show(form, sel){ el(sel, form)?.classList.add('d-block'); }
+  function hide(form, sel){ el(sel, form)?.classList.remove('d-block'); }
+
+  function handleResponse(response){
+    if(!response.ok) return Promise.reject(new Error(response.status + ' ' + response.statusText));
+    const ct = response.headers.get('content-type') || '';
+    if(ct.indexOf('application/json') !== -1) return response.json();
+    return response.text();
+  }
+
+  function submitForm(event){
+    event.preventDefault();
+    const form = event.currentTarget;
+    const action = form.getAttribute('action');
+    if(!action) { hide(form, '.loading'); show(form, '.error-message'); el('.error-message', form).textContent = 'Form action not set'; return; }
+
+    hide(form, '.error-message'); hide(form, '.sent-message'); show(form, '.loading');
+
+    fetch(action, { method: 'POST', body: new FormData(form), headers: {'X-Requested-With': 'XMLHttpRequest'} })
+      .then(handleResponse)
+      .then(data => {
+        hide(form, '.loading');
+        if(typeof data === 'object'){
+          if(data.ok){ show(form, '.sent-message'); form.reset(); return; }
+          const err = data.error || data.errors || JSON.stringify(data);
+          throw new Error(err);
+        }
+        if(typeof data === 'string'){
+          if(data.trim() === 'OK'){ show(form, '.sent-message'); form.reset(); return; }
+          throw new Error(data || 'Unexpected response');
+        }
+        throw new Error('Unknown response');
+      })
+      .catch(err => {
+        hide(form, '.loading');
+        const em = el('.error-message', form);
+        if(em){ em.textContent = err.message || err; em.classList.add('d-block'); }
+      });
+  }
+
+  Array.from(document.querySelectorAll('.formspree-form')).forEach(f => f.removeEventListener('submit', submitForm));
+  Array.from(document.querySelectorAll('.formspree-form')).forEach(f => f.addEventListener('submit', submitForm));
 })();
 
 // Custom Loader Typewriter for "De Nyeya"
